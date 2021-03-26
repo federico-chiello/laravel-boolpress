@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Rotta riferita all'homecontroller pubblico
+Route::get('/', 'HomeController@index')->name('index');
 
 Auth::routes();
 
