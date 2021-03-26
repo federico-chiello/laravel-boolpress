@@ -20,6 +20,7 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
+//Rotta riferita all'homecontroller amministrativo
 Route::prefix('admin')
 ->namespace('Admin')
 ->middleware('auth')
