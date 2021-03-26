@@ -19,7 +19,23 @@ class PostSeeder extends Seeder
             $newPost = new Post();
             $newPost->title = $faker->sentence(2);
             $newPost->content = $faker->text(300);
-            $newPost->slug = Str::slug($newPost->title, '-');
+
+            //Se viene inserito uno stesso prodotto, lo slug rimmarrà uguale a quello inserito precedentemente.
+            //Per evitare ciò bisogna fare un ciclo while attraverso cui fare un controllo dello slug e se c'è incrementarlo.
+            $slug = Str::slug($newPost->title);
+            $slugIniziale = $slug;
+            
+            $postPresente = Post::where('slug', $slug)->first();
+            $contatore = 1;
+            
+            while($postPresente){
+                $slug = $slugIniziale .'-' .$contatore;
+                $postPresente = Post::where('slug', $slug)->first();
+                $contatore++;
+            }
+            
+            $newPost->slug = $slug;
+            
             $newPost->save(); 
         }
     }
