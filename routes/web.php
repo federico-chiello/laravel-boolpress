@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 //Rotta riferita all'homecontroller pubblico
 Route::get('/', 'HomeController@index')->name('index');
 
+Route::get('/posts', 'PostController@index')->name('guests.posts.index');
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
