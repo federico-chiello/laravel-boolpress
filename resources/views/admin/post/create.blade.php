@@ -23,6 +23,11 @@
           <label for="inputContent">Content</label>
           <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
         </div>
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
        
         <button type="submit" class="btn btn-primary">Salva</button>
       </form>
