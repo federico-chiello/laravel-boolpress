@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <a class="btn btn-primary" href="">Crea un nuovo post</a>
+    <a class="btn btn-primary" href="{{ route('post.create') }}">Crea un nuovo post</a>
 </div>
 @if (session('status'))
 <div class="alert alert-succes">
