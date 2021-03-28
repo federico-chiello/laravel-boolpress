@@ -24,11 +24,13 @@
           <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
         </div>
 
+        @foreach ($tag as $tags)
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tag[]" value="{{ $tags->id }}">
+          <label class="form-check-label" for="exampleCheck1">{{ $tags->name }}</label>
         </div>
-       
+        @endforeach
+
         <button type="submit" class="btn btn-primary">Salva</button>
       </form>
 </div>
