@@ -11,7 +11,8 @@
         {{ $posts->title }}
       </div>
       <div class="card-body">
-        <p class="card-text">iv class="card-header">{{ $posts->content }}</p>
+        <p class="card-text">{{ $posts->content }}</p>
+        <p class="card-text">{{ $posts->user->name }}</p>
         <a href="#" class="btn btn-primary">Dettagli</a>
       </div>
     </div>
