@@ -108,6 +108,9 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post->update($data);
+        if(array_key_exists('tag', $data)){
+            $post->tags()->sync($data['tag']);
+        }
         return redirect()->route('post.show', $post);
     }
 
