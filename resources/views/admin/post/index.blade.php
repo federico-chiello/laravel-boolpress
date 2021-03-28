@@ -24,9 +24,20 @@
         <tr>
             <th>{{ $posts->id }}</th>
             <td>{{ $posts->title }}</td>
-            <td>{{ $posts->user_id }}</td>
+            <td>{{ $posts->user->name }}</td>
             <td>{{ $posts->created_at }}</td>
             <td>{{ $posts->updated_at }}</td>
+            <td><a class="btn btn-primary" href="{{ route('post.show', $posts->id) }}">Vedi</a></td>
+            <td><a class="btn btn-warning" href="{{ route('post.edit', $posts->id) }}">Modifica</a></td>
+            <td>
+              <form action="{{route('post.destroy', $posts)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <div class="form-group">
+                  <button class="btn btn-danger" type="submit">Cancella</button>
+                </div>
+              </form>
+            </td>
           </tr>
         @endforeach
     </tbody>
