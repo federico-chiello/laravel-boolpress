@@ -87,8 +87,11 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $tags = Tag::all();
+
         $data = [
-            'post' => $post
+            'post' => $post,
+            'tag' => $tags
         ];
 
         return view('admin.post.edit', $data);
