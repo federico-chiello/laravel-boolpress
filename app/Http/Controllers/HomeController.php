@@ -16,4 +16,9 @@ class HomeController extends Controller
     {
         return view('guests.home');
     }
+
+    public function contacts()
+    {
+        
+    }
 }
