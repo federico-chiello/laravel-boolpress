@@ -20,10 +20,13 @@
           <input type="text" class="form-control" id="inputTitle" name="title">
         </div>
         <div class="form-group">
+          <label for="image">Scegli l'immagine</label>
+          <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+        <div class="form-group">
           <label for="inputContent">Content</label>
           <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
         </div>
-
         @foreach ($tag as $tags)
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tag[]" value="{{ $tags->id }}">
