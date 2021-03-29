@@ -9,6 +9,16 @@
           <label for="inputTitle">Title</label>
           <input type="text" class="form-control" id="inputTitle" name="title" value="{{ $post->title }}">
         </div>
+        @if ($post->cover)
+        <p>Immagine:</p>
+        <img src="{{asset('storage/'.$post->cover)}}" alt="{{ $post->title }}">
+          @else
+            <p>Immagine non presente</p>  
+        @endif
+        <div class="form-group">
+          <label for="image">Scegli l'immagine</label>
+          <input type="file" class="form-control-file" id="image" name="image">
+        </div>
         <div class="form-group">
           <label for="inputContent">Content</label>
           <textarea class="form-control" name="content" id="content" cols="30" rows="10">{{ $post->content }}</textarea>
