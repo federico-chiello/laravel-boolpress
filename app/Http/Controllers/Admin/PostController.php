@@ -52,11 +52,13 @@ class PostController extends Controller
         $data = $request->all();
         $userId = Auth::id();
 
+
         $newPost = new Post();
         $newPost->user_id = $userId;
         $newPost->slug = Str::slug($data['title']);
-        $pathCover = Storage::put('postCover', $data['image']);
+        $pathCover = Storage::put('post_cover', $data['image']);
         $data['cover'] = $pathCover;
+        $newPost->cover = $data['cover'];
 
         $newPost->fill($data);
 
