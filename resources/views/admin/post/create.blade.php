@@ -12,7 +12,7 @@
   </div>
 @endif
 <div class="container">
-    <form action="{{route('post.store')}}" method="post">
+    <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="form-group">
