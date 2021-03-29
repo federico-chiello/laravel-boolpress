@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
           <label for="image">Scegli l'immagine</label>
-          <input type="file" class="form-control-file" id="image" name="image">
+          <input type="file" class="form-control-file" id="image" name="cover">
         </div>
         <div class="form-group">
           <label for="inputContent">Content</label>
