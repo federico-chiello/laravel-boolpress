@@ -30,6 +30,6 @@ class HomeController extends Controller
         $newLead = new Lead();
         $newLead->fill($data);
         $newLead->save();
-        return redirect()->route('guests.contacts');
+        return redirect()->route('guests.contacts')->with('status', 'Messaggio inviato correttamente');
     }
 }
