@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Tag;
 
 class PostController extends Controller
@@ -54,6 +55,9 @@ class PostController extends Controller
         $newPost = new Post();
         $newPost->user_id = $userId;
         $newPost->slug = Str::slug($data['title']);
+        $pathCover = Storage::put('postCover', $data['image']);
+        $data['cover'] = $pathCover;
+
         $newPost->fill($data);
 
         $newPost->save();
