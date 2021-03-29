@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="container">
-    <form>
+    <form action="{{ route('guests.contacts.sent') }}" method="post">
+        @method('POST')
+        @csrf
         <div class="form-group">
             <label for="name">Nome</label>
             <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name">
