@@ -113,6 +113,8 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $data = $request->all();
+        $pathCover = Storage::put('post_cover', $data['image']);
+        $data['cover'] = $pathCover;
         $post->update($data);
         if(array_key_exists('tag', $data)){
             $post->tags()->sync($data['tag']);

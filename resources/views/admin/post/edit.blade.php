@@ -29,6 +29,7 @@
           <label class="form-check-label" for="exampleCheck1">{{ $tags->name }}</label>
         </div>
         @endforeach
+        <button type="submit" class="btn btn-primary">Salva</button>
       </form>
 </div>
 @endsection
