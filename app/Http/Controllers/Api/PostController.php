@@ -8,5 +8,5 @@ use App\Post;
 
 class PostController extends Controller
 {
-    //
+    
 }
