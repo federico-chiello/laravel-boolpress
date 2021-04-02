@@ -15,6 +15,7 @@ class ApiToken
      */
     public function handle($request, Closure $next)
     {
+        $api_token = $request->header('authorization');
         return $next($request);
     }
 }
