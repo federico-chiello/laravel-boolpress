@@ -18,6 +18,13 @@ class ApiToken
     {
         $api_token = $request->header('authorization');
 
+        if(empty($api_token)){
+            return response()->json([
+                'success' => false,
+                'error' => 'Non sei autenticato'
+            ]);
+        }
+
         $api_token = substr($api_token, 7);
 
         $user = User::where('api_token', $api_token)->first();
